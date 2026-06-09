@@ -1,0 +1,78 @@
+<header>
+<h1>Benefícios da Tecnologia</h1>
+<p>Educação • Medicina • Agricultura</p>
+</header>
+
+<nav>
+<button onclick="abrirAba('inicio')">🏠 Início</button>
+<button onclick="abrirAba('educacao')">📚 Educação</button>
+<button onclick="abrirAba('medicina')">🏥 Medicina</button>
+<button onclick="abrirAba('agricultura')">🌱 Agricultura</button>
+<button onclick="abrirAba('fontes')">🔎 Fontes</button>
+</nav>
+
+<div id="inicio" class="aba">
+<div class="card">
+<h2>Bem-vindo</h2>
+<p>Este site apresenta os benefícios da tecnologia na educação, medicina e agricultura.</p>
+</div>
+</div>
+
+<div id="educacao" class="aba" style="display:none">
+<div class="card">
+<h2>📚 Educação</h2>
+<img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200">
+<p>
+A tecnologia facilita o acesso ao conhecimento por meio da internet,
+plataformas digitais e aplicativos educativos.
+</p>
+</div>
+</div>
+
+<div id="medicina" class="aba" style="display:none">
+<div class="card">
+<h2>🏥 Medicina</h2>
+<img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200">
+<p>
+Equipamentos modernos permitem diagnósticos mais precisos e tratamentos
+mais eficientes.
+</p>
+</div>
+</div>
+
+<div id="agricultura" class="aba" style="display:none">
+<div class="card">
+<h2>🌱 Agricultura</h2>
+<img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1200">
+<p>
+Drones, sensores e máquinas inteligentes aumentam a produtividade agrícola.
+</p>
+</div>
+</div>
+
+<div id="fontes" class="aba" style="display:none">
+<div class="card">
+<h2>🔎 Fontes</h2>
+<ul>
+<li>G1</li>
+<li>BBC News Brasil</li>
+<li>CNN Brasil</li>
+<li>Embrapa</li>
+<li>Fiocruz</li>
+</ul>
+</div>
+</div>
+
+<script>
+function abrirAba(id){
+
+let abas = document.getElementsByClassName("aba");
+
+for(let i=0;i<abas.length;i++){
+    abas[i].style.display="none";
+}
+
+document.getElementById(id).style.display="block";
+
+}
+</script>
