@@ -1,78 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tecnologia e Benefícios</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#eef2f7,#d9e4f5);
+    color:#333;
+}
+
+/* CABEÇALHO */
+header{
+    background:linear-gradient(90deg,#1e2a38,#2f4b7c);
+    color:white;
+    text-align:center;
+    padding:30px;
+    box-shadow:0 4px 10px rgba(0,0,0,.2);
+}
+
+header h1{
+    font-size:2rem;
+}
+
+/* MENU */
+.tabs{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    background:white;
+    box-shadow:0 2px 8px rgba(0,0,0,.1);
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.tabs button{
+    padding:15px 20px;
+    border:none;
+    background:none;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.tabs button:hover{
+    background:#e8f0ff;
+}
+
+.tabs button.active{
+    background:#2f4b7c;
+    color:white;
+}
+
+/* CONTEÚDO */
+.content{
+    display:none;
+    max-width:1000px;
+    margin:25px auto;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+    animation:fade .4s ease;
+}
+
+.content img{
+    width:100%;
+    border-radius:12px;
+    margin-top:15px;
+}
+
+.content h2{
+    color:#2f4b7c;
+    margin-bottom:10px;
+}
+
+.content p{
+    line-height:1.8;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* CARDS */
+.card{
+    margin-top:20px;
+    padding:20px;
+    background:#f7f9fc;
+    border-left:5px solid #2f4b7c;
+    border-radius:10px;
+}
+
+/* LINKS */
+a{
+    color:#2f4b7c;
+    text-decoration:none;
+}
+
+a:hover{
+    text-decoration:underline;
+}
+
+/* RODAPÉ */
+footer{
+    text-align:center;
+    padding:20px;
+    background:#1e2a38;
+    color:white;
+    margin-top:30px;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+    .tabs button{
+        width:100%;
+    }
+
+    header h1{
+        font-size:1.5rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
 <header>
-<h1>Benefícios da Tecnologia</h1>
-<p>Educação • Medicina • Agricultura</p>
+    <h1>💻 Tecnologia e Seus Benefícios</h1>
+    <p>Como a tecnologia transforma a sociedade moderna</p>
 </header>
 
-<nav>
-<button onclick="abrirAba('inicio')">🏠 Início</button>
-<button onclick="abrirAba('educacao')">📚 Educação</button>
-<button onclick="abrirAba('medicina')">🏥 Medicina</button>
-<button onclick="abrirAba('agricultura')">🌱 Agricultura</button>
-<button onclick="abrirAba('fontes')">🔎 Fontes</button>
-</nav>
-
-<div id="inicio" class="aba">
-<div class="card">
-<h2>Bem-vindo</h2>
-<p>Este site apresenta os benefícios da tecnologia na educação, medicina e agricultura.</p>
-</div>
+<div class="tabs">
+    <button class="tablink active" onclick="openTab(event,'inicio')">Início</button>
+    <button class="tablink" onclick="openTab(event,'educacao')">Educação</button>
+    <button class="tablink" onclick="openTab(event,'medicina')">Medicina</button>
+    <button class="tablink" onclick="openTab(event,'agricultura')">Agricultura</button>
+    <button class="tablink" onclick="openTab(event,'referencias')">Referências</button>
 </div>
 
-<div id="educacao" class="aba" style="display:none">
-<div class="card">
-<h2>📚 Educação</h2>
-<img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1200">
-<p>
-A tecnologia facilita o acesso ao conhecimento por meio da internet,
-plataformas digitais e aplicativos educativos.
-</p>
-</div>
+<div id="inicio" class="content" style="display:block;">
+    <h2>Bem-vindo</h2>
+
+    <div class="card">
+        <p>
+            A tecnologia está presente em praticamente todos os aspectos da vida moderna.
+            Ela facilita a comunicação, melhora a educação, auxilia na medicina e aumenta
+            a produtividade em diversos setores.
+        </p>
+    </div>
+
+    <img src="https://picsum.photos/900/400?technology" alt="Tecnologia">
 </div>
 
-<div id="medicina" class="aba" style="display:none">
-<div class="card">
-<h2>🏥 Medicina</h2>
-<img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200">
-<p>
-Equipamentos modernos permitem diagnósticos mais precisos e tratamentos
-mais eficientes.
-</p>
-</div>
+<div id="educacao" class="content">
+    <h2>📚 Educação</h2>
+
+    <div class="card">
+        <p>
+            A tecnologia permitiu aulas online, bibliotecas digitais, plataformas de ensino
+            e ferramentas que tornam o aprendizado mais acessível e interativo.
+        </p>
+    </div>
+
+    <img src="https://picsum.photos/900/400?education" alt="Educação">
 </div>
 
-<div id="agricultura" class="aba" style="display:none">
-<div class="card">
-<h2>🌱 Agricultura</h2>
-<img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1200">
-<p>
-Drones, sensores e máquinas inteligentes aumentam a produtividade agrícola.
-</p>
-</div>
+<div id="medicina" class="content">
+    <h2>🏥 Medicina</h2>
+
+    <div class="card">
+        <p>
+            Equipamentos modernos ajudam médicos a realizar diagnósticos mais rápidos e
+            precisos. Além disso, a tecnologia contribui para pesquisas e tratamentos
+            avançados.
+        </p>
+    </div>
+
+    <img src="https://picsum.photos/900/400?hospital" alt="Medicina">
 </div>
 
-<div id="fontes" class="aba" style="display:none">
-<div class="card">
-<h2>🔎 Fontes</h2>
-<ul>
-<li>G1</li>
-<li>BBC News Brasil</li>
-<li>CNN Brasil</li>
-<li>Embrapa</li>
-<li>Fiocruz</li>
-</ul>
+<div id="agricultura" class="content">
+    <h2>🌱 Agricultura</h2>
+
+    <div class="card">
+        <p>
+            Sensores, drones e máquinas inteligentes aumentam a eficiência da produção
+            agrícola, reduzindo desperdícios e melhorando a qualidade dos alimentos.
+        </p>
+    </div>
+
+    <img src="https://picsum.photos/900/400?farm" alt="Agricultura">
 </div>
+
+<div id="referencias" class="content">
+    <h2>📖 Referências</h2>
+
+    <ul style="line-height:2;">
+        <li><a href="https://www.gov.br" target="_blank">Portal do Governo Federal</a></li>
+        <li><a href="https://brasilescola.uol.com.br" target="_blank">Brasil Escola</a></li>
+        <li><a href="https://mundoeducacao.uol.com.br" target="_blank">Mundo Educação</a></li>
+        <li><a href="https://www.todamateria.com.br" target="_blank">Toda Matéria</a></li>
+        <li><a href="https://pt.wikipedia.org" target="_blank">Wikipedia</a></li>
+    </ul>
 </div>
+
+<footer>
+    Trabalho Escolar - Tecnologia e Seus Benefícios
+</footer>
 
 <script>
-function abrirAba(id){
+function openTab(evt, tabName){
 
-let abas = document.getElementsByClassName("aba");
+    let contents = document.querySelectorAll(".content");
+    let buttons = document.querySelectorAll(".tablink");
 
-for(let i=0;i<abas.length;i++){
-    abas[i].style.display="none";
-}
+    contents.forEach(content=>{
+        content.style.display="none";
+    });
 
-document.getElementById(id).style.display="block";
+    buttons.forEach(button=>{
+        button.classList.remove("active");
+    });
 
+    document.getElementById(tabName).style.display="block";
+    evt.currentTarget.classList.add("active");
 }
 </script>
+
+</body>
+</html>
